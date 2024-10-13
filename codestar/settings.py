@@ -33,6 +33,10 @@ ALLOWED_HOSTS = ['8000-acelliott121-djangoblog-iu415xkzlyt.ws-eu116.gitpod.io', 
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-acelliott121-djangoblog-iu415xkzlyt.ws-eu116.gitpod.io',
+    'https://django-blog-elliott-d139c6eb9692.herokuapp.com',
+]
 
 # Application definition
 
