@@ -15,6 +15,10 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    def __str__(self):
+        return f"The title of this post is {self.title} | written by {self.author}"
+    class Meta:
+        ordering = ['-created_on']
     
 
 class Comment(models.Model):
@@ -25,3 +29,9 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f"{self.body} | written by {self.author}"
+    class Meta:
+        ordering = ['-created_on']
+
+
